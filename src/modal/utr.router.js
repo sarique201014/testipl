@@ -27,7 +27,7 @@ app.get("/", async (req, res) => {
 
 app.get("/check-status", async (req, res) => {
   const mobile = req.query.mobile;
-  const user = await UTRS.find((u) => u.mobile === mobile);
+  const user = await UTRS.findOne({ mobile });
 
   console.log(user, "user");
 
